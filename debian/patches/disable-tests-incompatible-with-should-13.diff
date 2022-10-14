@@ -1,0 +1,26 @@
+Description: Disable tests incompatible with node-should >= 13
+ Should >=13 uses object name:
+ AssertionError: expected MapCache { __data__: Object { a: 'b' } }
+                 to equal Object { __data__: Object { a: 'b' } }
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2019-07-21
+
+--- a/test.js
++++ b/test.js
+@@ -14,6 +14,7 @@
+ describe('mapCache', function() {
+   var cache = new MapCache;
+ 
++  /*
+   it('should set values on the `__data__` object on the cache:', function() {
+     cache.set('a', 'b');
+     cache.should.eql({ __data__: { a: 'b' }});
+@@ -25,6 +26,7 @@
+     cache.del('a');
+     cache.should.eql({ __data__: {}});
+   });
++  */
+ 
+   it('should get values from the `__data__` object:', function() {
+     cache.set('a', 'b');

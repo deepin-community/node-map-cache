@@ -1,0 +1,27 @@
+Source: node-map-cache
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sruthi Chandran <srud@disroot.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-should <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-map-cache
+Vcs-Git: https://salsa.debian.org/js-team/node-map-cache.git
+Homepage: https://github.com/jonschlinkert/map-cache
+Rules-Requires-Root: no
+
+Package: node-map-cache
+Architecture: all
+Depends:
+ ${misc:Depends}
+Multi-Arch: foreign
+Description: Basic cache object for storing key-value pairs
+ Basic cache object for storing key-value pairs. Based on MapCache in
+ Lo-dash 3.0
+ .
+ Node.js is an event-based server-side JavaScript engine.
